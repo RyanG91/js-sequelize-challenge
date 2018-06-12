@@ -2,6 +2,7 @@ const Sequelize = require('sequelize')
 
 const con = new Sequelize('postgres://@localhost:5432/bookmarks');
 
+// Establish connection
 con
   .authenticate()
   .then(() => {
@@ -37,7 +38,7 @@ con
     const app = express()
 
     app.get('/', (req, res) => res.send('Hello World!'))
-
+  
     app.listen(3333, () => console.log('Example app listening on port 3000!'))
 
     app.get('/bookmarks', (req, res) => {
